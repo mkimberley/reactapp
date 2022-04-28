@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app-deploy
+  labels:
+    app: react-app
+spec:
+  selector:
+    matchLabels:
+      app: react-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app-container
+        image: "dokcer.io/mkimberley84/reactapp:v2"
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 80
+        env:
+          - name: "PORT"
+            value: "80"
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          request:
+            cpu: 50m
+            memory: 64Mi

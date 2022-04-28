@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: reactapp-app-route
+  labels:
+    app: reactapp-app
+spec:
+  to:
+    kind: Service
+    name: react-app-svc
+    weight: 100
+  port:
+    targetPort: 3002
+  wildcardPolicy: None
