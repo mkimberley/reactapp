@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: react-app-container
-        image: "dokcer.io/mkimberley84/reactapp:v2"
+        image: "docker.io/mkimberley84/reactapp:v5"
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 80
+          - containerPort: 8080
         env:
           - name: "PORT"
             value: "80"

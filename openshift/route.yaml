@@ -9,6 +9,6 @@ spec:
     kind: Service
     name: react-app-svc
     weight: 100
-  port:
-    targetPort: 3002
+    port:
+      targetPort: 8080
   wildcardPolicy: None
