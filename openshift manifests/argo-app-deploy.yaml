@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reactapp
+spec:
+  destination:
+    name: ''
+    namespace: reactapp
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: .
+    repoURL: 'https://github.com/mkimberley/reactapp.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles: ['values.yaml']
+  project: reactapp
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+
+
+      
