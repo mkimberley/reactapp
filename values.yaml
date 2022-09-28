@@ -62,7 +62,7 @@ ingress:
   #      - chart-example.local
 
 route:
-  customHost: https://reactapp-route-reactapp.apps.cluster-gzx7z.gzx7z.sandbox221.opentlc.com
+  customHost: reactapp-route-reactapp.apps.cluster-gzx7z.gzx7z.sandbox221.opentlc.com
   targetPort: 8080
 
 
