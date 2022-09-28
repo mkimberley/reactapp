@@ -4,6 +4,7 @@ metadata:
   name: {{ include "reactapp.fullname" . }}
   labels:
     {{- include "reactapp.labels" . | nindent 4 }}
+    argocd.argoproj.io/managed-by: openshift-gitops
 spec:
   type: {{ .Values.service.type }}
   ports:

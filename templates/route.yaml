@@ -5,6 +5,7 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade
   labels:
     app: {{ template "reactapp.name" . }}
+    argocd.argoproj.io/managed-by: openshift-gitops
   name: {{ template "reactapp.name" .}}
 spec:
   host: {{ .Values.route.customHost }}
