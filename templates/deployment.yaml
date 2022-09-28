@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "reactapp.fullname" . }}
   labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
     {{- include "reactapp.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
@@ -18,7 +19,6 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        argocd.argoproj.io/managed-by: openshift-gitops
         {{- include "reactapp.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
